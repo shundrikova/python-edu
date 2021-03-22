@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions &amp; Modules &#8212; Exceed Python Education</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Object-oriented programming (OOP)" href="oop.html" />
+    <link rel="prev" title="Control Flow" href="control_flow.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Exceed Python Education</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_types.html">
+   Data Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   Control Flow
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Functions &amp; Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="oop.html">
+   Object-oriented programming (OOP)
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Функции
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Аргументы
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#return">
+     Return
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Функции как объекты
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Лямбды
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-filter">
+   map &amp; filter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Генераторы
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Декораторы
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Модули
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pip">
+   Стандартная библиотека и pip
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="functions-modules">
+<h1>Functions &amp; Modules<a class="headerlink" href="#functions-modules" title="Permalink to this headline">¶</a></h1>
+<p>Повторное использование кода - очень важная часть программирования на любом языке. Увеличение размера кода затрудняет поддержку.</p>
+<div class="tip admonition">
+<p class="admonition-title">Interesting info</p>
+<p>Чтобы большой программный проект был успешным, важно придерживаться принципа «<strong>Don’t Repeat Yourself</strong>» (Не Повторяйся) или «<strong>DRY</strong>».</p>
+</div>
+<p>Мы уже рассмотрели один способ избавиться от повторения кода: с помощью циклов. В этом модуле мы рассмотрим еще два: функции и модули.</p>
+<div class="section" id="id1">
+<h2>Функции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Любой оператор, состоящий из слова, за которым следует информация в круглых скобках, является вызовом функции.</p>
+<p>Вот несколько примеров, которые вы уже видели:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="nb">str</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Слова перед круглыми скобками - это имена функций, а значения, разделенные запятыми внутри круглых скобок, - аргументы функции.</p>
+<p>Помимо использования предопределенных функций, вы можете создавать свои собственные функции с помощью оператора <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+
+<span class="n">my_func</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spam
+spam
+spam
+</pre></div>
+</div>
+</div>
+</div>
+<p>Она не принимает аргументов и трижды печатает «spam». Она определяется, а затем вызывается. Операторы в функции выполняются только при ее вызове.
+Блок кода внутри каждой функции начинается с двоеточия (:) и имеет отступ.</p>
+<p>Вы должны определить функции до их вызова, точно так же, как вы должны назначать переменные перед их использованием:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">84</span><span class="n">ea1bbbea4b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hello</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;hello&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Аргументы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Все определения функций, которые мы рассмотрели до сих пор, были функциями с нулевыми аргументами, которые вызываются с пустыми круглыми скобками.
+Однако большинство функций принимают аргументы.</p>
+<p>В приведенном ниже примере определяется функция, которая принимает один аргумент:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_with_exclamation</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
+
+<span class="n">print_with_exclamation</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>python!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вы также можете определять функции с более чем одним аргументом; разделите их запятыми:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_sum_twice</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">print_sum_twice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+13
+</pre></div>
+</div>
+</div>
+</div>
+<p>Аргументы функции могут использоваться как переменные внутри определения функции. Однако на них нельзя ссылаться вне определения функции. Это также относится к другим переменным, созданным внутри функции.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">variable</span><span class="p">):</span>
+    <span class="n">variable</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">8</span><span class="n">f2a1a4178d6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">func</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;variable&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Технически параметры - это переменные в определении функции, а аргументы - это значения, помещаемые в параметры при вызове функций.</p>
+</div>
+<div class="section" id="return">
+<h3>Return<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
+<p>Некоторые функции, такие как <code class="docutils literal notranslate"><span class="pre">int</span></code> или <code class="docutils literal notranslate"><span class="pre">str</span></code>, возвращают значение, которое можно использовать позже.
+Чтобы сделать это для ваших определенных функций, вы можете использовать оператор <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+8
+</pre></div>
+</div>
+</div>
+</div>
+<p>Оператор <code class="docutils literal notranslate"><span class="pre">return</span></code> не может использоваться вне определения функции.</p>
+<p>Как только вы возвращаете значение из функции, она немедленно перестает выполняться. Никакого кода после оператора возврата никогда не произойдет.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">total</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This won’t be printed&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add_numbers</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Функции как объекты<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Хотя они создаются не так, как обычные переменные, функции такие же, как и любые другие значения. Они могут быть назначены и переназначены переменным, а затем на них будут ссылаться эти имена.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">operation</span> <span class="o">=</span> <span class="n">multiply</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">operation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28
+</pre></div>
+</div>
+</div>
+</div>
+<p>В приведенном выше примере функция умножения назначается переменной <code class="docutils literal notranslate"><span class="pre">operation</span></code>. Теперь <code class="docutils literal notranslate"><span class="pre">operation</span></code> также можно использовать для вызова функции.</p>
+<p>Функции также могут использоваться в качестве аргументов других функций.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">do_twice</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<p>Как видите, функция <code class="docutils literal notranslate"><span class="pre">do_twice</span></code> принимает функцию в качестве аргумента и вызывает ее в своем теле.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Лямбды<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>При обычном создании функции (с использованием <code class="docutils literal notranslate"><span class="pre">def</span></code>) она автоматически присваивается переменной.
+Это отличается от создания других объектов, таких как строки и целые числа, которые могут быть созданы «на лету», без присвоения их переменной.</p>
+<p>То же самое возможно и с функциями, при условии, что они созданы с использованием лямбда-синтаксиса. Созданные таким образом функции называются анонимными.</p>
+<p>Этот подход чаще всего используется при передаче простой функции в качестве аргумента другой функции. Синтаксис показан в следующем примере и состоит из ключевого слова <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, за которым следует список аргументов, двоеточие и выражение.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+<span class="n">my_func</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Interesting info</p>
+<p>Лямбда-функции получили свое название от лямбда-исчисления, которое представляет собой модель вычислений, изобретенную Алонзо Черчем.</p>
+</div>
+<p>Лямбда-функции не так мощны, как именованные.
+Они могут делать только то, что требует одного выражения - обычно эквивалентно одной строке кода.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># named function</span>
+<span class="k">def</span> <span class="nf">polynomial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">polynomial</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># lambda</span>
+<span class="nb">print</span><span class="p">((</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>  <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+</pre></div>
+</div>
+</div>
+</div>
+<p>В приведенном выше коде мы на лету создали анонимную функцию и вызвали ее с аргументом.</p>
+<p>Лямбда-функции можно назначать переменным и использовать как обычные функции.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+</pre></div>
+</div>
+</div>
+</div>
+<p>Однако для этого редко есть веская причина - обычно лучше определить функцию с помощью <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
+</div>
+<div class="section" id="map-filter">
+<h2>map &amp; filter<a class="headerlink" href="#map-filter" title="Permalink to this headline">¶</a></h2>
+<p>Встроенные функции <code class="docutils literal notranslate"><span class="pre">map</span></code> и <code class="docutils literal notranslate"><span class="pre">filter</span></code> - очень полезные функции высшего порядка, которые работают со списками (или подобными объектами, называемыми <code class="docutils literal notranslate"><span class="pre">iterables</span></code>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">map</span></code> принимает функцию и итерацию в качестве аргументов и возвращает новую итерацию с функцией, примененной к каждому аргументу.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_five</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">add_five</span><span class="p">,</span> <span class="n">nums</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16, 27, 38, 49, 60]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Мы можем легче достичь того же результата, используя лямбды.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">nums</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16, 27, 38, 49, 60]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Чтобы преобразовать результат в список, мы явно использовали <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">filter</span></code> фильтрует итерацию, удаляя элементы, не соответствующие предикату (функция, возвращающая логическое значение).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nums</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22, 44]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Как и <code class="docutils literal notranslate"><span class="pre">map</span></code>, результат должен быть явно преобразован в список, если вы хотите его распечатать.</p>
+</div>
+<div class="section" id="id5">
+<h2>Генераторы<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Генераторы</strong> - это тип итераторов, таких как списки или кортежи.
+В отличие от списков, они не позволяют индексацию с произвольными индексами, но их все же можно перебирать с помощью циклов <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Их можно создать с помощью функций и оператора <code class="docutils literal notranslate"><span class="pre">yield</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countdown</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">countdown</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+4
+3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Оператор <code class="docutils literal notranslate"><span class="pre">yield</span></code> используется для определения генератора, заменяя возврат функции для предоставления результата без разрушения локальных переменных.</p>
+<p>Из-за того, что они выдают по одному элементу за раз, генераторы не имеют ограничений памяти списков.
+На самом деле они могут быть <strong>бесконечными</strong>!</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">infinite_sevens</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="mi">7</span>
+        
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">infinite_sevens</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Короче говоря, генераторы позволяют объявлять функцию, которая ведет себя как итератор, то есть ее можно использовать в цикле <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Конечные генераторы можно преобразовать в списки, передав их в качестве аргумента функции <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numbers</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">numbers</span><span class="p">(</span><span class="mi">11</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Использование генераторов приводит к повышению производительности, что является результатом ленивой (по запросу) генерации значений, что приводит к снижению использования памяти. Кроме того, нам не нужно ждать, пока все элементы будут сгенерированы, прежде чем мы начнем их использовать.</p>
+</div>
+<div class="section" id="id6">
+<h2>Декораторы<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><strong>Декораторы</strong> позволяют изменять функции с помощью других функций.
+Это идеально, когда вам нужно расширить функциональность функций, которые вы не хотите изменять.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decor</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrap</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;============&#39;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;============&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrap</span>
+
+<span class="k">def</span> <span class="nf">print_text</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+
+<span class="n">decorated</span> <span class="o">=</span> <span class="n">decor</span><span class="p">(</span><span class="n">print_text</span><span class="p">)</span>
+<span class="n">decorated</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============
+Hello World!
+============
+</pre></div>
+</div>
+</div>
+</div>
+<p>Мы определили функцию с именем <code class="docutils literal notranslate"><span class="pre">decor</span></code>, которая имеет единственный параметр <code class="docutils literal notranslate"><span class="pre">func</span></code>. Внутри <code class="docutils literal notranslate"><span class="pre">decor</span></code> мы определили вложенную функцию с именем <code class="docutils literal notranslate"><span class="pre">wrap</span></code>. Функция <code class="docutils literal notranslate"><span class="pre">wrap</span></code> напечатает строку, затем вызовет функцию <code class="docutils literal notranslate"><span class="pre">func()</span></code> и напечатает другую строку. Функция <code class="docutils literal notranslate"><span class="pre">decor</span></code> возвращает в качестве результата функцию <code class="docutils literal notranslate"><span class="pre">wrap</span></code>.</p>
+<p>Можно сказать, что переменная <code class="docutils literal notranslate"><span class="pre">decorated</span></code> - декорированная версия <code class="docutils literal notranslate"><span class="pre">print_text</span></code> - это <code class="docutils literal notranslate"><span class="pre">print_text</span></code> плюс еще что-то.
+Фактически, если бы мы написали полезный декоратор, мы могли бы полностью заменить <code class="docutils literal notranslate"><span class="pre">print_text</span></code> декорированной версией, чтобы мы всегда получали нашу версию <code class="docutils literal notranslate"><span class="pre">print_text</span></code> «плюс что-то».</p>
+<p>Это делается путем переназначения переменной, содержащей нашу функцию:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_text</span> <span class="o">=</span> <span class="n">decor</span><span class="p">(</span><span class="n">print_text</span><span class="p">)</span>
+<span class="n">print_text</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============
+Hello World!
+============
+</pre></div>
+</div>
+</div>
+</div>
+<p>Теперь <code class="docutils literal notranslate"><span class="pre">print_text</span></code> соответствует нашей декорированной версии.</p>
+<p>В нашем предыдущем примере мы декорировали нашу функцию, заменив переменную, содержащую функцию, на упакованную версию.</p>
+<p>Этот шаблон можно использовать в любое время, чтобы обернуть любую функцию.
+Python обеспечивает поддержку обертывания функции в декораторе, предварительно добавляя определение функции с именем декоратора и символом <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.</p>
+<p>Если мы определяем функцию, мы можем «декорировать» ее символом <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, например:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decor</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrap</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;============&#39;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;============&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrap</span>
+
+<span class="nd">@decor</span>
+<span class="k">def</span> <span class="nf">print_text</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+
+<span class="n">print_text</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============
+Hello World!
+============
+</pre></div>
+</div>
+</div>
+</div>
+<p>Одна функция может иметь несколько декораторов.</p>
+</div>
+<div class="section" id="id7">
+<h2>Модули<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p><strong>Модули</strong> - это фрагменты кода, написанные другими людьми для выполнения общих задач, таких как генерация случайных чисел, выполнение математических операций и т. д.</p>
+<p>Основной способ использования модуля - это добавить <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code> вверху вашего кода, а затем использовать <code class="docutils literal notranslate"><span class="pre">module_name.var</span></code> для доступа к функциям и значениям с именем <code class="docutils literal notranslate"><span class="pre">var</span></code> в модуле.
+Например, в следующем примере модуль <code class="docutils literal notranslate"><span class="pre">random</span></code> используется для генерации случайных чисел:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+2
+4
+5
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Код использует функцию <code class="docutils literal notranslate"><span class="pre">randint</span></code>, определенную в модуле <code class="docutils literal notranslate"><span class="pre">random</span></code>, для печати 5 случайных чисел в диапазоне от 1 до 6.</p>
+<p>Есть еще один вид импорта, который можно использовать, если вам нужны только определенные функции из модуля.<br />
+Они принимают форму <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_name</span> <span class="pre">import</span> <span class="pre">var</span></code>, а затем var можно использовать, как если бы он был определен в вашем коде обычным образом.<br />
+Например, чтобы импортировать только константу <code class="docutils literal notranslate"><span class="pre">pi</span></code> из модуля <code class="docutils literal notranslate"><span class="pre">math</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<p>Используйте список, разделенный запятыми, для импорта нескольких объектов:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">*</span></code> импортирует все объекты из модуля. Например: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">math</span> <span class="pre">import</span> <span class="pre">*</span></code><br />
+Обычно это не рекомендуется, поскольку при этом путают переменные в вашем коде с переменными во внешнем модуле.</p>
+<p>Попытка импортировать недоступный модуль вызывает ошибку <code class="docutils literal notranslate"><span class="pre">ImportError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">some_module</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">beceebbbf090</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">some_module</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;some_module&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вы можете импортировать модуль или объект под другим именем, используя ключевое слово <code class="docutils literal notranslate"><span class="pre">as</span></code>. Это в основном используется, когда модуль или объект имеет длинное или непонятное имя.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">square_root</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square_root</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pip">
+<h2>Стандартная библиотека и pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h2>
+<p>В Python есть три основных типа модулей: те, которые вы пишете сами, те, которые вы устанавливаете из внешних источников, и те, которые предустановлены вместе с Python.<br />
+Последний тип называется стандартной библиотекой и содержит множество полезных модулей. Некоторые из полезных модулей стандартной библиотеки включают <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">re</span></code>, <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, <code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>, <code class="docutils literal notranslate"><span class="pre">subprocess</span></code>, <code class="docutils literal notranslate"><span class="pre">socket</span></code>, <code class="docutils literal notranslate"><span class="pre">email</span></code>, <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">doctest</span></code>, <code class="docutils literal notranslate"><span class="pre">unittest</span></code>, <code class="docutils literal notranslate"><span class="pre">pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">argparse</span></code> и <code class="docutils literal notranslate"><span class="pre">sys</span></code>.</p>
+<p>Задачи, которые может выполнять стандартная библиотека, включают синтаксический анализ строк, сериализацию данных, тестирование, отладку и управление датами, сообщениями электронной почты, аргументами командной строки и многое другое!</p>
+<p>Обширная стандартная библиотека Python - одна из его основных сильных сторон как языка.</p>
+<p>Некоторые модули в стандартной библиотеке написаны на Python, а некоторые - на C.<br />
+Большинство из них доступны на всех платформах, но некоторые относятся к Windows или Unix.</p>
+<p>Многие сторонние модули Python хранятся в индексе пакетов Python (<strong>PyPI</strong>).<br />
+Лучший способ установить их - использовать программу <code class="docutils literal notranslate"><span class="pre">pip</span></code>. Он устанавливается по умолчанию в современных дистрибутивах Python. Если у вас его нет, его легко установить онлайн. После того, как он у вас есть, установить библиотеки из PyPI очень просто. Найдите имя библиотеки, которую вы хотите установить, перейдите в командную строку и введите <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;library_name&gt;</span></code>. Как только вы это сделаете, импортируйте библиотеку и используйте ее в своем коде.</p>
+<p>Важно вводить команды <code class="docutils literal notranslate"><span class="pre">pip</span></code> в командной строке, а не в интерпретаторе Python.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="control_flow.html" title="previous page">Control Flow</a>
+    <a class='right-next' id="next-link" href="oop.html" title="next page">Object-oriented programming (OOP)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

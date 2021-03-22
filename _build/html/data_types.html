@@ -1,0 +1,1543 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Types &#8212; Exceed Python Education</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Control Flow" href="control_flow.html" />
+    <link rel="prev" title="Intro" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Exceed Python Education</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   Control Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions &amp; Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="oop.html">
+   Object-oriented programming (OOP)
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/data_types.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/data_types.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Встроенные типы данных
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Числа
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Логические значения
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Строки
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Списки
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Кортежи
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Словари
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Множества
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   Операции над числами
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   Логические выражения и операторы
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   Операции над строками
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   Операции над списками
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   Операции над кортежами
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   Операции над словарями
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   Операции над множествами
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-types">
+<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Встроенные типы данных<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Python имеет несколько встроенных типов данных, таких как <strong>числа</strong> (целые числа, числа с плавающей запятой, комплексные числа), <strong>логические значения</strong>, <strong>строки</strong>, <strong>списки</strong>, <strong>кортежи</strong>, <strong>словари</strong> и <strong>множества</strong>. Ими можно управлять с помощью нескольких инструментов:</p>
+<ul class="simple">
+<li><p>Операторы</p></li>
+<li><p>Встроенные функции</p></li>
+<li><p>Методы типа данных</p></li>
+</ul>
+<div class="section" id="id2">
+<h3>Числа<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Python предоставляет <strong>целые числа</strong>, <strong>числа с плавающей запятой</strong> и <strong>комплексные числа</strong>. Целые числа и числа с плавающей запятой являются наиболее часто используемыми числовыми типами в повседневном программировании, в то время как комплексные числа имеют особые варианты использования в математике и естественных науках.</p>
+<p>Вот краткое описание их функций:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Number</p></th>
+<th class="text-align:center head"><p>Description</p></th>
+<th class="text-align:right head"><p>Examples</p></th>
+<th class="text-align:right head"><p>Python Data Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Integer</p></td>
+<td class="text-align:center"><p>Целые числа</p></td>
+<td class="text-align:right"><p>1, 2, 42, 476, -99999</p></td>
+<td class="text-align:right"><p>int</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Floating-point</p></td>
+<td class="text-align:center"><p>Числа с плавающей запятой</p></td>
+<td class="text-align:right"><p>1.0, 2.2, 42.09, 476.1, -99999.9</p></td>
+<td class="text-align:right"><p>float</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Complex</p></td>
+<td class="text-align:center"><p>Числа с действительной и мнимой частью</p></td>
+<td class="text-align:right"><p>complex(1, 2), complex(-1, 7), complex(“1+2j”)</p></td>
+<td class="text-align:right"><p>complex</p></td>
+</tr>
+</tbody>
+</table>
+<p>Целые числа имеют неограниченную точность. Информация о точности чисел с плавающей запятой доступна в <code class="docutils literal notranslate"><span class="pre">sys.float_info</span></code>. Комплексные числа имеют действительную и мнимую части, которые являются числами с плавающей запятой.</p>
+</div>
+<div class="section" id="id3">
+<h3>Логические значения<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Логические значения реализованы как подкласс целых чисел с двумя возможными значениями в Python: <strong>True</strong> или <strong>False</strong>. Обратите внимание, что эти значения должны начинаться с заглавной буквы.</p>
+</div>
+<div class="section" id="id4">
+<h3>Строки<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Строки - это фрагменты текста или последовательности символов, которые можно определить с помощью одинарных, двойных или тройных кавычек:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Использование одинарных кавычек</span>
+<span class="n">greeting</span> <span class="o">=</span> <span class="s1">&#39;Hello there!&#39;</span>
+
+<span class="c1"># Использование двойных кавычек</span>
+<span class="n">welcome</span> <span class="o">=</span> <span class="s2">&quot;Hello there!&quot;</span>
+
+<span class="c1"># Использование тройных кавычек</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Hello there!&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Экранирование символов</span>
+<span class="n">escaped</span> <span class="o">=</span> <span class="s1">&#39;can</span><span class="se">\&#39;</span><span class="s1">t&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Escaped: &#39;</span><span class="p">,</span> <span class="n">escaped</span><span class="p">)</span>
+
+<span class="n">not_escaped</span> <span class="o">=</span> <span class="s2">&quot;can&#39;t&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not escaped: &#39;</span><span class="p">,</span> <span class="n">not_escaped</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Escaped:  can&#39;t
+Not escaped:  can&#39;t
+</pre></div>
+</div>
+</div>
+</div>
+<p>Обратите внимание, что вы можете использовать разные типы кавычек для создания строковых объектов в Python. Вы также можете использовать символ обратной косой черты () для экранирования символов со специальным значением, таких как сами кавычки.</p>
+</div>
+<div class="section" id="id5">
+<h3>Списки<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Списки обычно называются <strong>массивами</strong> почти во всех других языках программирования. В Python списки - это изменяемые последовательности, которые группируют различные объекты вместе. Чтобы создать список, вы используете присваивание с последовательностью объектов, разделенных запятыми, в квадратных скобках ([]) с правой стороны:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Определение пустого списка</span>
+<span class="n">empty</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Определение списка чисел</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+
+<span class="c1"># Изменение списка</span>
+<span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1"># Определение списка строк</span>
+<span class="n">superheroes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;batman&quot;</span><span class="p">,</span> <span class="s2">&quot;superman&quot;</span><span class="p">,</span> <span class="s2">&quot;spiderman&quot;</span><span class="p">]</span>
+
+<span class="c1"># Определение списка объектов с разными типами данных</span>
+<span class="n">mixed_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="kc">False</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Списки могут содержать объекты разных типов данных, в том числе другие списки. Они также могут быть пустыми. Поскольку списки являются изменяемыми последовательностями, вы можете изменять их на месте, используя индексную нотацию и операцию присваивания.</p>
+</div>
+<div class="section" id="id6">
+<h3>Кортежи<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Кортежи похожи на списки, но представляют собой неизменяемые последовательности. Это означает, что вы не можете изменить их после создания. Чтобы создать объект кортежа, можно использовать операцию присваивания с последовательностью элементов, разделенных запятыми, с правой стороны. Обычно для разделения кортежа используются круглые скобки, но они не являются обязательными:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">employee</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="s2">&quot;Software Developer&quot;</span><span class="p">)</span>
+
+<span class="n">employee</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">b12d1c27d9d5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">employee</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="s2">&quot;Software Developer&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">employee</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>Если вы попытаетесь изменить кортеж на месте, вы получите ошибку TypeError, указывающую на то, что кортежи не поддерживают модификации.</p>
+</div>
+<div class="section" id="id7">
+<h3>Словари<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Словари - это тип ассоциативного массива, содержащего набор пар ключ-значение, в котором каждый ключ является хешируемым объектом, который сопоставляется с произвольным объектом, значением. Есть несколько способов создать словарь. Вот два из них:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;job&quot;</span><span class="p">:</span> <span class="s2">&quot;Python Developer&quot;</span><span class="p">}</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s2">&quot;Web Developer&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">person1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">person2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;John Doe&#39;, &#39;age&#39;: 25, &#39;job&#39;: &#39;Python Developer&#39;}
+{&#39;name&#39;: &#39;Jane Doe&#39;, &#39;age&#39;: 24, &#39;job&#39;: &#39;Web Developer&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Первый подход использует пару фигурных скобок, в которые вы добавляете разделенный запятыми список пар ключ-значение, используя двоеточие (:) для отделения ключей от значений. Второй подход использует встроенную функцию <code class="docutils literal notranslate"><span class="pre">dict()</span></code>, которая может принимать аргументы ключевых слов и превращать их в словарь с ключевыми словами в качестве ключей и аргументами в качестве значений.</p>
+</div>
+<div class="section" id="id8">
+<h3>Множества<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Python также предоставляет такую структуру данных, как множество. Множества - это неупорядоченные и изменяемые коллекции произвольных, но хешируемых объектов Python. Создавать множества можно несколькими способами. Вот два из них:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">employees1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Linda&quot;</span><span class="p">}</span>
+
+<span class="n">employees2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="s2">&quot;Marie&quot;</span><span class="p">])</span>
+
+<span class="n">empty</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>В первом примере для создания множества используются фигурные скобки и список объектов, разделенных запятыми. Если вы используете <code class="docutils literal notranslate"><span class="pre">set()</span></code>, вам необходимо предоставить итерацию с объектами, которые вы хотите включить в набор. Наконец, если вы хотите создать пустой набор, вам нужно использовать <code class="docutils literal notranslate"><span class="pre">set()</span></code> без аргументов. Использование пустой пары фигурных скобок создает пустой словарь вместо множества.</p>
+<p>Один из наиболее распространенных вариантов использования множеств - их использование для удаления повторяющихся объектов из существующего итеративного объекта:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Поскольку наборы являются коллекциями уникальных объектов, когда вы создаете набор с помощью <code class="docutils literal notranslate"><span class="pre">set()</span></code> и итерируемого объекта в качестве аргумента, конструктор класса удаляет все повторяющиеся объекты и сохраняет только по одному экземпляру каждого из них в результирующем наборе.</p>
+<p>Когда использовать словарь:</p>
+<ul class="simple">
+<li><p>Когда вам нужна логическая связь между парой key:value.</p></li>
+<li><p>Когда вам нужен быстрый поиск ваших данных на основе настраиваемого ключа.</p></li>
+<li><p>Когда ваши данные постоянно модифицируются. Помните, словари изменчивы.</p></li>
+</ul>
+<p>Когда использовать другие типы:</p>
+<ul class="simple">
+<li><p>Используйте списки, если у вас есть набор данных, не требующий произвольного доступа. Старайтесь выбирать списки, когда вам нужна простая повторяющаяся коллекция, которая часто изменяется.</p></li>
+<li><p>Используйте множество, если вам нужна уникальность элементов.</p></li>
+<li><p>Используйте кортежи, когда ваши данные не могут измениться.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Операции над числами<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p><strong>Операторы</strong> представляют такие операции, как сложение, вычитание, умножение, деление и т. д. Когда вы комбинируете их с числами, они образуют выражения, которые Python может вычислить:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Сложение</span>
+<span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>
+
+<span class="c1"># Вычитание</span>
+<span class="mi">5</span> <span class="o">-</span> <span class="mi">3</span>
+
+<span class="c1"># Умножение</span>
+<span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="c1"># Деление</span>
+<span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span>
+
+<span class="c1"># Целочисленное деление</span>
+<span class="mi">5</span> <span class="o">//</span> <span class="mi">3</span>
+
+<span class="c1"># Остаток от деления</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
+
+<span class="c1"># Возведение в степень</span>
+<span class="mi">5</span> <span class="o">**</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Эти операторы работают с двумя <strong>операндами</strong> и обычно называются <strong>арифметическими операторами</strong>. Операнды могут быть числами или переменными, которые содержат числа.</p>
+<p>Передавая целое число или строку, представляющую число, <code class="docutils literal notranslate"><span class="pre">float()</span></code> возвращает число с плавающей запятой:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Целые числа</span>
+<span class="nb">float</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Строки, представляющие числа</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-200&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;2.25&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+-200.0
+2.25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Комплексные числа</span>
+<span class="nb">float</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">e88d092651d1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Комплексные числа</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">float</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: can&#39;t convert complex to float
+</pre></div>
+</div>
+</div>
+</div>
+<p>С помощью <code class="docutils literal notranslate"><span class="pre">float()</span></code> вы можете преобразовывать целые числа и строки, представляющие числа, в числа с плавающей запятой, но вы не можете преобразовывать комплексное число в число с плавающей запятой.</p>
+<p>Учитывая число с плавающей запятой или строку, <code class="docutils literal notranslate"><span class="pre">int()</span></code> возвращает целое число. Эта функция не округляет до ближайшего целого числа. Она просто обрезает, отбрасывая все, что находится после десятичной точки, и возвращает число. Итак, ввод 10,6 возвращает 10 вместо 11. Аналогично, 3,25 возвращает 3:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Числа с плавающей запятой</span>
+<span class="nb">int</span><span class="p">(</span><span class="mf">10.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Строки, представляющие числа</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;2.3&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">82</span><span class="n">cbdc68d355</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Строки, представляющие числа</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;2.3&quot;</span><span class="p">))</span>
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;2.3&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Комплексные числа</span>
+<span class="nb">int</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="n">b45c6433f10d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Комплексные числа</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">int</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: can&#39;t convert complex to int
+</pre></div>
+</div>
+</div>
+</div>
+<p>Обратите внимание, что вы можете передать строку, представляющую целое число, в <code class="docutils literal notranslate"><span class="pre">int()</span></code>, но вы не можете передать строку, представляющую число с плавающей запятой. Комплексные числа тоже не работают.</p>
+<p>Помимо этих встроенных функций, с каждым типом числа связано несколько методов. Вы можете получить к ним доступ, используя ссылку на атрибут, также известную как точечная нотация (<strong>dot notation</strong>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">10.0</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">10.2</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">10.</span><span class="n">bit_length</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-22-2c75d808345c&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">10</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Эти методы могут быть полезным инструментом для изучения. В случае целых чисел для доступа к их методам через литерал (<strong>literal</strong>) необходимо использовать пару круглых скобок. В противном случае вы получите SyntaxError.</p>
+</div>
+<div class="section" id="id10">
+<h2>Логические выражения и операторы<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>Логические значения используются, чтобы выразить значение истинности выражения или объекта. Логические значения удобны при написании функций-предикатов или при использовании операторов сравнения, таких как больше (&gt;), меньше (&lt;), равно (==) …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">&gt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">&lt;=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">!=</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python предоставляет встроенную функцию <code class="docutils literal notranslate"><span class="pre">bool()</span></code>, которая тесно связана с логическими значениями. Вот как это работает:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">([])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">bool()</span></code> принимает объект в качестве аргумента и возвращает True или False в соответствии с истинным значением объекта.</p>
+<p><code class="docutils literal notranslate"><span class="pre">int()</span></code> принимает логическое значение и возвращает 0 для False и 1 для True:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Это связано с тем, что Python реализует свои логические значения как подкласс <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</div>
+<div class="section" id="id11">
+<h2>Операции над строками<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>После определения строк можно использовать оператор «плюс» (+), чтобы объединить их в новую строку:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Happy&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;pythoning!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Happy pythoning!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>При использовании со строками оператор «плюс» (+) объединяет их в одну строку.
+Обратите внимание, что вам нужно включить пробел (” “) между словами, чтобы иметь правильный интервал в полученной строке. Если нужно объединить много строк, вам следует подумать об использовании <code class="docutils literal notranslate"><span class="pre">.join()</span></code>, что более эффективно. Вы узнаете о <code class="docutils literal notranslate"><span class="pre">.join()</span></code> немного позже.</p>
+<p>Python имеет множество полезных встроенных функций и методов для работы со строками. Например, если вы передадите строку в качестве аргумента функции <code class="docutils literal notranslate"><span class="pre">len()</span></code>, вы получите длину строки или количество содержащихся в ней символов:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Happy pythoning!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
+</div>
+</div>
+<p>Строковый класс (<code class="docutils literal notranslate"><span class="pre">str</span></code>) предоставляет богатый набор методов, полезных для манипулирования и обработки строк.
+<code class="docutils literal notranslate"><span class="pre">.join()</span></code> берет итерацию строк и объединяет их в новую строку. Строка, для которой вы вызываете метод, играет роль разделителя:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;Happy&quot;</span><span class="p">,</span> <span class="s2">&quot;pythoning!&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Happy pythoning!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code> возвращает копию базовой строки со всеми буквами, преобразованными в верхний регистр:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Happy pythoning!&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HAPPY PYTHONING!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.lower()</span></code> возвращает копию базовой строки со всеми буквами, преобразованными в нижний регистр:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;HAPPY PYTHONING!&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;happy pythoning!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.format()</span></code> выполняет операцию форматирования строки. Этот метод обеспечивает большую гибкость при форматировании и интерполяции строк:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John Doe&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="s2">&quot;My name is </span><span class="si">{0}</span><span class="s2"> and I&#39;m </span><span class="si">{1}</span><span class="s2"> years old&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;My name is John Doe and I&#39;m 25 years old&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вы также можете использовать <strong>f-строку</strong> для форматирования ваших строк без использования <code class="docutils literal notranslate"><span class="pre">.format()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John Doe&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="sa">f</span><span class="s2">&quot;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I&#39;m </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;My name is John Doe and I&#39;m 25 years old&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>F-строки - это улучшенный синтаксис форматирования строк. Это строковые литералы с буквой f в начале вне кавычек. Выражения, заключенные в фигурные скобки ({}), заменяются своими значениями в форматированной строке.</p>
+<p>Строки - это последовательности символов. Это означает, что вы можете извлекать отдельные символы из строки, используя их позиционный индекс. Индекс - это целое число с отсчетом от нуля, связанное с определенной позицией в последовательности:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">welcome</span> <span class="o">=</span> <span class="s2">&quot;Welcome to Python!&quot;</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">welcome</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">welcome</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> 
+    <span class="n">welcome</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>W
+P
+!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Операция индексации извлекает символ в позиции, указанной данным индексом. Обратите внимание, что отрицательный индекс извлекает элемент в обратном порядке, где -1 является индексом последнего символа в строке.</p>
+<p>Вы также можете получить часть строки, разрезав ее:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">welcome</span> <span class="o">=</span> <span class="s2">&quot;Welcome to Python!&quot;</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">welcome</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span> 
+    <span class="n">welcome</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">17</span><span class="p">],</span> 
+    <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome
+Python
+</pre></div>
+</div>
+</div>
+</div>
+<p>Операция <strong>slice</strong> принимает элемент в форме <code class="docutils literal notranslate"><span class="pre">[start:end:step]</span></code>. Здесь start - это индекс первого элемента, который нужно включить в срез, а end - это индекс последнего элемента, который не включен в возвращаемый срез. Наконец, step - необязательное целое число, представляющее количество элементов, через которые нужно перейти при извлечении элементов из исходной строки. Например, шаг 2 вернет каждый второй элемент между start и end.</p>
+</div>
+<div class="section" id="id12">
+<h2>Операции над списками<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>Списки представляют собой последовательности, подобные строкам, поэтому можно получить доступ к их отдельным элементам, используя целочисленные индексы с отсчетом от нуля:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">superheroes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;batman&quot;</span><span class="p">,</span> <span class="s2">&quot;superman&quot;</span><span class="p">,</span> <span class="s2">&quot;spiderman&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">superheroes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
+    <span class="n">superheroes</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> 
+    <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spiderman
+superman
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вы также можете создавать новые списки из существующего списка, используя операцию <code class="docutils literal notranslate"><span class="pre">slice</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">new_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Если вы вложите список, строку или любую другую последовательность в другой список, вы можете получить доступ к внутренним элементам, используя несколько индексов:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">mixed_types</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вы также можете объединить свои списки с помощью оператора плюс:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span> <span class="s2">&quot;grapes&quot;</span><span class="p">,</span> <span class="s2">&quot;oranges&quot;</span><span class="p">]</span>
+<span class="n">veggies</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;corn&quot;</span><span class="p">,</span> <span class="s2">&quot;kale&quot;</span><span class="p">,</span> <span class="s2">&quot;mushrooms&quot;</span><span class="p">]</span>
+<span class="n">grocery_list</span> <span class="o">=</span> <span class="n">fruits</span> <span class="o">+</span> <span class="n">veggies</span>
+<span class="n">grocery_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apples&#39;, &#39;grapes&#39;, &#39;oranges&#39;, &#39;corn&#39;, &#39;kale&#39;, &#39;mushrooms&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Учитывая список в качестве аргумента, <code class="docutils literal notranslate"><span class="pre">len()</span></code> возвращает длину списка или количество содержащихся в нем объектов:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Наиболее часто используемые методы:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.append()</span></code> принимает объект в качестве аргумента и добавляет его в конец базового списка:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span> <span class="s2">&quot;grapes&quot;</span><span class="p">,</span> <span class="s2">&quot;oranges&quot;</span><span class="p">]</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;blueberries&quot;</span><span class="p">)</span>
+<span class="n">fruits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apples&#39;, &#39;grapes&#39;, &#39;oranges&#39;, &#39;blueberries&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.sort()</span></code> сортирует базовый список на месте:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">fruits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apples&#39;, &#39;blueberries&#39;, &#39;grapes&#39;, &#39;oranges&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.pop()</span></code> принимает в качестве аргумента целочисленный индекс, затем удаляет и возвращает элемент по этому индексу в базовом списке:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">numbers_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 200]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Списки - это довольно распространенные и универсальные структуры данных в Python. Они настолько популярны, что разработчики иногда склонны злоупотреблять ими, что может сделать код неэффективным.</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>Операции над кортежами<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>Как и в случае со списками, вы также можете выполнять индексацию и нарезку кортежей:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">employee</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="s2">&quot;Software Developer&quot;</span><span class="p">)</span>
+<span class="n">employee</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jane&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">employee</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Doe&#39;, 31)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Поскольку кортежи представляют собой последовательности, вы можете использовать индексы для извлечения определенных элементов в кортежах. Обратите внимание, что вы также можете получить фрагменты из кортежа с помощью операции нарезки.</p>
+<p>Вы также можете добавить два кортежа с помощью оператора конкатенации:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">second_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">first_tuple</span> <span class="o">+</span> <span class="n">second_tuple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Операция конкатенации с двумя кортежами создает новый кортеж, содержащий все элементы в двух входных кортежах.</p>
+<p>Как и в случае со списками и строками, вы можете использовать некоторые встроенные функции для управления кортежами. Например, <code class="docutils literal notranslate"><span class="pre">len()</span></code> возвращает длину кортежа или количество содержащихся в нем элементов:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>С кортежем в качестве аргумента <code class="docutils literal notranslate"><span class="pre">list()</span></code> возвращает список со всеми элементами входного кортежа:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Поскольку кортежи являются неизменяемыми последовательностями, многие методы, доступные для списков, не работают с кортежами. Однако кортежи имеют два встроенных метода:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.count()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.index()</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">.count()</span></code> принимает объект в качестве аргумента и возвращает количество раз, когда элемент появляется в базовом кортеже. Если объекта нет в кортеже, то <code class="docutils literal notranslate"><span class="pre">.count()</span></code> возвращает 0:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">letter</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.index()</span></code> принимает объект в качестве аргумента и возвращает индекс первого экземпляра этого объекта в имеющемся кортеже. Если объекта нет в кортеже, то <code class="docutils literal notranslate"><span class="pre">.index()</span></code> вызывает <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">93</span><span class="o">-</span><span class="mf">5e53</span><span class="n">efde6b5c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">letter</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: tuple.index(x): x not in tuple
+</pre></div>
+</div>
+</div>
+</div>
+<p>Кортежи - довольно полезные структуры данных. Они эффективно используют память, неизменяемы и обладают большим потенциалом для управления данными, которые не должны изменяться пользователем. Их также можно использовать в качестве ключей словаря, о чем вы узнаете в следующем разделе.</p>
+</div>
+<div class="section" id="id14">
+<h2>Операции над словарями<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>Вы можете получить значение, связанное с ключом словаря, используя следующий синтаксис:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;job&quot;</span><span class="p">:</span> <span class="s2">&quot;Python Developer&quot;</span><span class="p">}</span>
+<span class="n">person1</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;John Doe&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+<p>Это очень похоже на операцию индексирования, но на этот раз вы используете ключ вместо индекса.</p>
+<p>Вы также можете получить ключи, значения и пары ключ-значение в словаре с помощью <code class="docutils literal notranslate"><span class="pre">.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">.values()</span></code> и <code class="docutils literal notranslate"><span class="pre">.items()</span></code> соответственно:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Получить все ключи</span>
+<span class="n">person1</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;job&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Получить все значения</span>
+<span class="n">person1</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;John Doe&#39;, 25, &#39;Python Developer&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Получить все пары ключ-значение</span>
+<span class="n">person1</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;name&#39;, &#39;John Doe&#39;), (&#39;age&#39;, 25), (&#39;job&#39;, &#39;Python Developer&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Эти три метода являются фундаментальными инструментами, когда дело доходит до управления словарями в Python, особенно когда вы выполняете итерацию по словарю.</p>
+</div>
+<div class="section" id="id15">
+<h2>Операции над множествами<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>Вы можете использовать некоторые встроенные функции с множествами, как вы это делали с другими встроенными структурами данных. Например, если вы передадите множество в качестве аргумента функции `len(), вы получите количество элементов в множестве:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">employees1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Linda&quot;</span><span class="p">}</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">employees1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вы также можете использовать операторы для управления множествами в Python. В этом случае большинство операторов представляют собой типичные операции над множеством, такие как объединение (|), пересечение (&amp;), разность (-) и так далее:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
+<span class="n">evens</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Объединение</span>
+<span class="n">primes</span> <span class="o">|</span> <span class="n">evens</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 4, 5, 6, 7, 8}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Пересечение</span>
+<span class="n">primes</span> <span class="o">&amp;</span> <span class="n">evens</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Разница</span>
+<span class="n">primes</span> <span class="o">-</span> <span class="n">evens</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3, 5, 7}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Множества предоставляют набор методов, в том числе методы, которые выполняют операции с множествами, подобные тем, что в приведенном выше примере. Они также предоставляют методы для изменения или обновления базового множества.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.add()</span></code> берет объект и добавляет его в множество:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">primes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 5, 7, 11}
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.remove()</span></code> берет объект и удаляет его из множества:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">}</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">primes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 5, 7}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Intro</a>
+    <a class='right-next' id="next-link" href="control_flow.html" title="next page">Control Flow</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

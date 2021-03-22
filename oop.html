@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object-oriented programming (OOP) &#8212; Exceed Python Education</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Functions &amp; Modules" href="functions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Exceed Python Education</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_types.html">
+   Data Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   Control Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions &amp; Modules
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Object-oriented programming (OOP)
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/oop.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/oop.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Классы
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#init">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Методы
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Наследование
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dunders">
+   Магические методы (dunders) и перегрузка операторов
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Сокрытие данных
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Статические методы и методы класса
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Методы класса
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Статические методы
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   Свойства класса
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="object-oriented-programming-oop">
+<h1>Object-oriented programming (OOP)<a class="headerlink" href="#object-oriented-programming-oop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Классы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Ранее мы рассмотрели две парадигмы программирования - <strong>императивную</strong> (с использованием операторов, циклов и функций в качестве подпрограмм) и <strong>функциональную</strong> (с использованием чистых функций, функций высшего порядка).</p>
+<p>Еще одна очень популярная парадигма - <strong>объектно-ориентированное программирование</strong> (ООП).<br />
+Объекты создаются с использованием <strong>классов</strong>, которые на самом деле являются фокусом ООП.
+Класс описывает, каким будет объект, но отделен от самого объекта. Другими словами, класс можно описать как план, описание или определение объекта.<br />
+Вы можете использовать один и тот же класс в качестве чертежа для создания нескольких различных объектов.</p>
+<p>Классы создаются с использованием ключевого слова <strong>class</strong> и блока с отступом, который содержит <strong>методы класса</strong> (которые являются функциями).
+Ниже приведен пример простого класса и его объектов.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">legs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legs</span> <span class="o">=</span> <span class="n">legs</span>
+
+<span class="n">felix</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;ginger&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">rover</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;dog-colored&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">stumpy</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;brown&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Этот код определяет класс с именем <code class="docutils literal notranslate"><span class="pre">Cat</span></code>, который имеет два атрибута: <code class="docutils literal notranslate"><span class="pre">color</span></code> и <code class="docutils literal notranslate"><span class="pre">legs</span></code>.<br />
+Затем класс используется для создания 3-х отдельных объектов этого класса.</p>
+<div class="section" id="init">
+<h3><code class="docutils literal notranslate"><span class="pre">__init__</span></code><a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h3>
+<p>Метод <code class="docutils literal notranslate"><span class="pre">__init__</span></code> - самый важный метод в классе.<br />
+Он вызывается при создании экземпляра (объекта) класса с использованием имени класса в качестве функции.</p>
+<p>Все методы должны иметь в качестве первого параметра <code class="docutils literal notranslate"><span class="pre">self</span></code>. Хотя он явно не передается, Python добавляет аргумент <code class="docutils literal notranslate"><span class="pre">self</span></code> в список за вас; вам не нужно включать его при вызове методов. В определении метода <code class="docutils literal notranslate"><span class="pre">self</span></code> относится к экземпляру, вызывающему метод.</p>
+<p>Экземпляры класса имеют <strong>атрибуты</strong>, которые представляют собой связанные с ними фрагменты данных.<br />
+В этом примере экземпляры <code class="docutils literal notranslate"><span class="pre">Cat</span></code> имеют атрибуты <code class="docutils literal notranslate"><span class="pre">color</span></code> и <code class="docutils literal notranslate"><span class="pre">leg</span></code>s. К ним можно получить доступ, поставив точку и имя атрибута после экземпляра.<br />
+Таким образом, в методе <code class="docutils literal notranslate"><span class="pre">__init__</span></code> <code class="docutils literal notranslate"><span class="pre">self.attribute</span></code> может использоваться для установки начального значения атрибутов экземпляра.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">legs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legs</span> <span class="o">=</span> <span class="n">legs</span>
+
+<span class="n">felix</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;ginger&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">felix</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ginger
+</pre></div>
+</div>
+</div>
+</div>
+<p>В приведенном выше примере метод <code class="docutils literal notranslate"><span class="pre">__init__</span></code> принимает два аргумента и назначает их атрибутам объекта. Метод <code class="docutils literal notranslate"><span class="pre">__init__</span></code> называется <strong>конструктором класса</strong>.</p>
+</div>
+<div class="section" id="id2">
+<h3>Методы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Классы могут иметь другие <strong>методы</strong>, определенные для добавления к ним функциональности.<br />
+Помните, что все методы должны иметь в качестве первого параметра <code class="docutils literal notranslate"><span class="pre">self</span></code>.<br />
+Доступ к этим методам осуществляется с использованием того же синтаксиса точек, что и для атрибутов.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Woof!&#39;</span><span class="p">)</span>
+
+<span class="n">fido</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Fido&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fido</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">fido</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>brown
+Woof!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Классы также могут иметь <strong>атрибуты класса</strong>, созданные путем присвоения переменных в теле класса. К ним можно получить доступ либо из экземпляров класса, либо из самого класса.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="n">legs</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Woof!&#39;</span><span class="p">)</span>
+
+<span class="n">fido</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Fido&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fido</span><span class="o">.</span><span class="n">legs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dog</span><span class="o">.</span><span class="n">legs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Атрибуты класса являются общими для всех экземпляров класса.</p>
+<p>Попытка получить доступ к атрибуту экземпляра, который не определен, вызывает ошибку <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>. Это также происходит, когда вы вызываете неопределенный метод.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+<span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">f94adae8ff8b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Rectangle&#39; object has no attribute &#39;color&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Наследование<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Наследование</strong> дает возможность разделять функциональные возможности между классами.<br />
+Представьте себе несколько классов: <code class="docutils literal notranslate"><span class="pre">Cat</span></code>, <code class="docutils literal notranslate"><span class="pre">Dog</span></code>, <code class="docutils literal notranslate"><span class="pre">Rabbit</span></code> и так далее. Хотя они могут отличаться в некоторых отношениях (только <code class="docutils literal notranslate"><span class="pre">Dog</span></code> может иметь метод <code class="docutils literal notranslate"><span class="pre">bark</span></code>), они, вероятно, будут похожи в других (все имеют атрибуты <code class="docutils literal notranslate"><span class="pre">color</span></code> и <code class="docutils literal notranslate"><span class="pre">name</span></code>).<br />
+Это сходство может быть выражено, если все они унаследованы от <strong>суперкласса</strong> <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, который содержит общие функции.<br />
+Чтобы унаследовать класс от другого класса, поместите имя суперкласса в круглые скобки после имени класса.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">purr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Purr...&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Woof!&#39;</span><span class="p">)</span>
+
+<span class="n">fido</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Fido&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fido</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+<span class="n">fido</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>brown
+Woof!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Класс, который наследуется от другого класса, называется <strong>подклассом</strong>.
+Класс, от которого другой класс унаследован, называется <strong>суперклассом</strong>.
+Если класс наследуется от другого с такими же атрибутами или методами, он переопределяет их.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Wolf</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+    
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grr...&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Wolf</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Woof!&#39;</span><span class="p">)</span>
+
+<span class="n">husky</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Max&#39;</span><span class="p">,</span> <span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">husky</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Woof!
+</pre></div>
+</div>
+</div>
+</div>
+<p>В приведенном выше примере <code class="docutils literal notranslate"><span class="pre">Wolf</span></code> - это суперкласс, <code class="docutils literal notranslate"><span class="pre">Dog</span></code> - подкласс.</p>
+<p>Наследование также может быть косвенным. Один класс может наследоваться от другого, и этот класс может наследоваться от третьего класса.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A method&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">another_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B method&#39;</span><span class="p">)</span>
+        
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">third_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C method&#39;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">another_method</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">third_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A method
+B method
+C method
+</pre></div>
+</div>
+</div>
+</div>
+<p>Однако циклическое наследование невозможно.</p>
+<p>Функция <code class="docutils literal notranslate"><span class="pre">super</span></code> - это полезная функция, связанная с наследованием, которая обращается к родительскому классу. Его можно использовать для поиска метода с определенным именем в суперклассе объекта.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">spam</span><span class="p">()</span>
+
+<span class="n">B</span><span class="p">()</span><span class="o">.</span><span class="n">spam</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">super().spam()</span></code> вызывает метод <code class="docutils literal notranslate"><span class="pre">spam</span></code> суперкласса.</p>
+</div>
+<div class="section" id="dunders">
+<h2>Магические методы (dunders) и перегрузка операторов<a class="headerlink" href="#dunders" title="Permalink to this headline">¶</a></h2>
+<p><strong>Магические методы</strong> - это специальные методы, у которых в начале и в конце названия есть двойное подчеркивание.
+Они также известны как <strong>dunders</strong>.
+Пока что мы столкнулись только с <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, но есть и другие.
+Они используются для создания функциональности, которую нельзя представить как обычный метод.</p>
+<p>Одним из распространенных способов их использования является <strong>перегрузка оператора</strong>.
+Это означает определение операторов для пользовательских классов, которые позволяют использовать с ними такие операторы, как <code class="docutils literal notranslate"><span class="pre">+</span></code> и <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>Примером магического метода является <code class="docutils literal notranslate"><span class="pre">__add__</span></code> для <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vector2D</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+    
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Vector2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">first</span> <span class="o">=</span> <span class="n">Vector2D</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">second</span> <span class="o">=</span> <span class="n">Vector2D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">first</span> <span class="o">+</span> <span class="n">second</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+16
+</pre></div>
+</div>
+</div>
+</div>
+<p>Метод <code class="docutils literal notranslate"><span class="pre">__add__</span></code> позволяет определять настраиваемое поведение для оператора <code class="docutils literal notranslate"><span class="pre">+</span></code> в нашем классе.<br />
+Как видите, он добавляет соответствующие атрибуты объектов и возвращает новый объект, содержащий результат.<br />
+Как только он определен, мы можем добавить два объекта класса вместе.</p>
+<p>Дополнительные магические методы для общих операторов:</p>
+<p><code class="docutils literal notranslate"><span class="pre">__sub__</span></code> для -</p>
+<p><code class="docutils literal notranslate"><span class="pre">__mul__</span></code> для *</p>
+<p><code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> для /</p>
+<p><code class="docutils literal notranslate"><span class="pre">__floordiv__</span></code> для //</p>
+<p><code class="docutils literal notranslate"><span class="pre">__mod__</span></code> для %</p>
+<p><code class="docutils literal notranslate"><span class="pre">__pow__</span></code> для **</p>
+<p><code class="docutils literal notranslate"><span class="pre">__and__</span></code> для &amp;</p>
+<p><code class="docutils literal notranslate"><span class="pre">__xor__</span></code> для ^</p>
+<p><code class="docutils literal notranslate"><span class="pre">__or__</span></code> для |</p>
+<p>Выражение <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> переводится в <code class="docutils literal notranslate"><span class="pre">x.__add__(y)</span></code>.<br />
+Однако, если <code class="docutils literal notranslate"><span class="pre">x</span></code> не реализовал <code class="docutils literal notranslate"><span class="pre">__add__</span></code>, а <code class="docutils literal notranslate"><span class="pre">x</span></code> и <code class="docutils literal notranslate"><span class="pre">y</span></code> имеют разные типы, то вызывается <code class="docutils literal notranslate"><span class="pre">y.__radd__(x)</span></code>.</p>
+<p>Для всех только что упомянутых магических методов существуют эквивалентные <strong>r-методы</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SpecialString</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cont</span> <span class="o">=</span> <span class="n">cont</span>
+    
+    <span class="k">def</span> <span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">cont</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">cont</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">cont</span><span class="p">])</span>
+    
+<span class="n">spam</span> <span class="o">=</span> <span class="n">SpecialString</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+<span class="n">hello</span> <span class="o">=</span> <span class="n">SpecialString</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spam</span> <span class="o">/</span> <span class="n">hello</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spam
+============
+Hello World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>В приведенном выше примере мы определили <strong>операцию деления</strong> для нашего класса <code class="docutils literal notranslate"><span class="pre">SpecialString</span></code>.</p>
+<p>Python также предоставляет магические методы для сравнения.</p>
+<p><code class="docutils literal notranslate"><span class="pre">__lt__</span></code> для &lt;</p>
+<p><code class="docutils literal notranslate"><span class="pre">__le__</span></code> для &lt;=</p>
+<p><code class="docutils literal notranslate"><span class="pre">__eq__</span></code> для ==</p>
+<p><code class="docutils literal notranslate"><span class="pre">__ne__</span></code> для !=</p>
+<p><code class="docutils literal notranslate"><span class="pre">__gt__</span></code> для &gt;</p>
+<p><code class="docutils literal notranslate"><span class="pre">__ge__</span></code> для&gt; =</p>
+<p>Если <code class="docutils literal notranslate"><span class="pre">__ne__</span></code> не реализован, он возвращает противоположность <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>.
+Других отношений между другими операторами нет.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SpecialString</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cont</span> <span class="o">=</span> <span class="n">cont</span>
+    
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">cont</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">cont</span><span class="p">[:</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cont</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">cont</span><span class="p">[</span><span class="n">index</span><span class="p">:]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    
+<span class="n">spam</span> <span class="o">=</span> <span class="n">SpecialString</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+<span class="n">eggs</span> <span class="o">=</span> <span class="n">SpecialString</span><span class="p">(</span><span class="s1">&#39;eggs&#39;</span><span class="p">)</span>
+<span class="n">spam</span> <span class="o">&gt;</span> <span class="n">eggs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;spam&gt;eggs
+e&gt;spam&gt;ggs
+eg&gt;spam&gt;gs
+egg&gt;spam&gt;s
+eggs&gt;spam&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Как видите, вы можете определить любое настраиваемое поведение для перегруженных операторов.</p>
+<p>Есть несколько волшебных способов заставить классы действовать как контейнеры.</p>
+<p><code class="docutils literal notranslate"><span class="pre">__len__</span></code> для <code class="docutils literal notranslate"><span class="pre">len()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> для индексации</p>
+<p><code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> для присвоения индексированным значениям</p>
+<p><code class="docutils literal notranslate"><span class="pre">__delitem__</span></code> для удаления индексированных значений</p>
+<p><code class="docutils literal notranslate"><span class="pre">__iter__</span></code> для итерации по объектам (например, в циклах <code class="docutils literal notranslate"><span class="pre">for</span></code>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">__contains__</span></code> для <code class="docutils literal notranslate"><span class="pre">in</span></code></p>
+<p>Есть много других магических методов, которые мы здесь не будем рассматривать, например <code class="docutils literal notranslate"><span class="pre">__call__</span></code> для вызова объектов как функций и <code class="docutils literal notranslate"><span class="pre">__int__</span></code>, <code class="docutils literal notranslate"><span class="pre">__str__</span></code> и т.п. для преобразования объектов во встроенные типы.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">VagueList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cont</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cont</span> <span class="o">=</span> <span class="n">cont</span>
+    
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cont</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+    
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cont</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">vague_list</span> <span class="o">=</span> <span class="n">VagueList</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vague_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vague_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vague_list</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vague_list</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+1
+C
+B
+</pre></div>
+</div>
+</div>
+</div>
+<p>Мы переопределили функцию <code class="docutils literal notranslate"><span class="pre">len()</span></code> для класса <code class="docutils literal notranslate"><span class="pre">VagueList</span></code>, чтобы она возвращала случайное число.<br />
+Функция индексации также возвращает случайный элемент в диапазоне из списка на основе выражения.</p>
+</div>
+<div class="section" id="id4">
+<h2>Сокрытие данных<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Ключевой частью объектно-ориентированного программирования является <strong>инкапсуляция</strong>, которая включает в себя упаковку связанных переменных и функций в один простой в использовании объект - экземпляр класса.<br />
+Связанная концепция - это <strong>скрытие данных</strong>, в котором говорится, что детали реализации класса должны быть скрыты, а для тех, кто хочет использовать этот класс, должен быть представлен чистый стандартный интерфейс.
+В других языках программирования это обычно делается с помощью частных методов и атрибутов, которые блокируют внешний доступ к определенным методам и атрибутам в классе.</p>
+<p>Философия Python немного отличается. Часто говорят, что «мы все здесь взрослые», что означает, что вы не должны вводить произвольные ограничения на доступ к частям класса. Следовательно, нет способов сделать метод или атрибут строго закрытым.</p>
+<p>Однако есть способы отговорить людей от доступа к частям класса, например, указав, что это деталь реализации и что их следует использовать на свой страх и риск.</p>
+<p>Слабо закрытые методы и атрибуты имеют в начале <strong>один знак подчеркивания</strong>.<br />
+Это сигнализирует о том, что они являются частными и не должны использоваться внешним кодом. Однако это в основном лишь соглашение и не мешает внешнему коду получить к ним доступ.<br />
+Его единственный фактический эффект заключается в том, что **from module_name import *** не импортирует переменные, которые начинаются с одного символа подчеркивания.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Queue</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hidden_list</span> <span class="o">=</span> <span class="n">contents</span>
+        
+    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hidden_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hidden_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Queue(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_hidden_list</span><span class="si">}</span><span class="s1">)&#39;</span>
+    
+<span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">_hidden_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Queue([1, 2, 3])
+Queue([0, 1, 2, 3])
+Queue([0, 1, 2])
+[0, 1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>В приведенном выше коде атрибут <code class="docutils literal notranslate"><span class="pre">_hiddenlist</span></code> помечен как частный, но к нему по-прежнему можно получить доступ во внешнем коде.
+Магический метод <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> используется для строкового представления экземпляра.</p>
+<p>Сильно закрытые методы и атрибуты имеют <strong>двойное подчеркивание</strong> в начале их имен. Это приводит к искажению их имен, что означает, что к ним нельзя получить доступ извне класса.<br />
+Это делается не для того, чтобы гарантировать их конфиденциальность, а для того, чтобы избежать ошибок, если есть подклассы, у которых есть методы или атрибуты с одинаковыми именами.<br />
+Методы с измененным именем все еще доступны извне, но под другим именем. К методу <code class="docutils literal notranslate"><span class="pre">__privatemethod</span></code> класса <code class="docutils literal notranslate"><span class="pre">Spam</span></code> можно получить доступ извне с помощью <code class="docutils literal notranslate"><span class="pre">_Spam__privatemethod</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spam</span><span class="p">:</span>
+    <span class="n">__egg</span> <span class="o">=</span> <span class="mi">7</span>
+    
+    <span class="k">def</span> <span class="nf">print_egg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__egg</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Spam</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">print_egg</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_Spam__egg</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">__egg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+7
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">98</span><span class="n">bece7fa29e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">s</span><span class="o">.</span><span class="n">print_egg</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">_Spam__egg</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">__egg</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Spam&#39; object has no attribute &#39;__egg&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>По сути, Python защищает эти атрибуты, внутренне изменяя их имя - добавляя имя класса.</p>
+</div>
+<div class="section" id="id5">
+<h2>Статические методы и методы класса<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Методы класса<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Методы объектов, которые мы рассмотрели до сих пор, вызываются экземпляром класса, который затем передается в параметр <code class="docutils literal notranslate"><span class="pre">self</span></code> метода.
+<strong>Методы класса</strong> другие - они вызываются классом, который передается в параметр <code class="docutils literal notranslate"><span class="pre">cls</span></code> метода.<br />
+Обычно их используют фабричные методы, которые создают экземпляр класса, используя параметры, отличные от тех, которые обычно передаются конструктору класса.<br />
+Методы класса отмечены декоратором <code class="docutils literal notranslate"><span class="pre">classmethod</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        
+    <span class="k">def</span> <span class="nf">calculate_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+    
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">new_square</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">side_length</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">side_length</span><span class="p">,</span> <span class="n">side_length</span><span class="p">)</span>
+    
+<span class="n">square</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="o">.</span><span class="n">new_square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="o">.</span><span class="n">calculate_area</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">new_square</span></code> - это метод класса, который вызывается в классе, а не в экземпляре класса. Он возвращает новый объект класса <code class="docutils literal notranslate"><span class="pre">cls</span></code>.</p>
+<p>Технически параметры <code class="docutils literal notranslate"><span class="pre">self</span></code> и <code class="docutils literal notranslate"><span class="pre">cls</span></code> - всего лишь условные обозначения; их можно было поменять на что угодно. Тем не менее, они повсеместно соблюдаются, поэтому разумно их использовать.</p>
+</div>
+<div class="section" id="id7">
+<h3>Статические методы<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p><strong>Статические методы</strong> похожи на методы класса, за исключением того, что они не получают никаких дополнительных аргументов; они идентичны обычным функциям, принадлежащим классу.<br />
+Они отмечены декоратором <code class="docutils literal notranslate"><span class="pre">staticmethod</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toppings</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toppings</span> <span class="o">=</span> <span class="n">toppings</span>
+        
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">validate_topping</span><span class="p">(</span><span class="n">topping</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">topping</span> <span class="o">==</span> <span class="s1">&#39;pineapple&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No pineapples!&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+<span class="n">ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;onions&#39;</span><span class="p">,</span> <span class="s1">&#39;salami&#39;</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">Pizza</span><span class="o">.</span><span class="n">validate_topping</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ingredients</span><span class="p">):</span>
+    <span class="n">pizza</span> <span class="o">=</span> <span class="n">Pizza</span><span class="p">(</span><span class="n">ingredients</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Статические методы ведут себя как обычные функции, за исключением того факта, что вы можете вызывать их из экземпляра класса.</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Свойства класса<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Свойства предоставляют способ настройки доступа к атрибутам экземпляра.<br />
+Они создаются путем помещения декоратора <code class="docutils literal notranslate"><span class="pre">property</span></code> над методом, что означает, что при обращении к атрибуту экземпляра с тем же именем, что и у метода, вместо этого будет вызываться метод.<br />
+Один из распространенных способов использования свойства - сделать атрибут доступным только для чтения.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toppings</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toppings</span> <span class="o">=</span> <span class="n">toppings</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pineapple_allowed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">pizza</span> <span class="o">=</span> <span class="n">Pizza</span><span class="p">([</span><span class="s1">&#39;cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="o">.</span><span class="n">pineapple_allowed</span><span class="p">)</span>
+<span class="n">pizza</span><span class="o">.</span><span class="n">pineapple_allowed</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="n">ee13d1018b2d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">pizza</span> <span class="o">=</span> <span class="n">Pizza</span><span class="p">([</span><span class="s1">&#39;cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="o">.</span><span class="n">pineapple_allowed</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">pizza</span><span class="o">.</span><span class="n">pineapple_allowed</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="ne">AttributeError</span>: can&#39;t set attribute
+</pre></div>
+</div>
+</div>
+</div>
+<p>Свойства также могут быть установлены путем определения функций установки / получения.<br />
+<strong>Сеттер</strong> устанавливает значение соответствующего свойства.<br />
+<strong>Геттер</strong> получает значение.<br />
+Чтобы определить сеттер, вам нужно использовать декоратор с тем же именем, что и свойство, за которым следует точка и ключевое слово <strong>setter</strong>.<br />
+То же самое относится к определению геттера.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toppings</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toppings</span> <span class="o">=</span> <span class="n">toppings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pineapple_allowed</span> <span class="o">=</span> <span class="kc">False</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pineapple_allowed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pineapple_allowed</span>
+    
+    <span class="nd">@pineapple_allowed</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">pineapple_allowed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the password: &#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">password</span> <span class="o">==</span> <span class="s1">&#39;Sw0rdf1sh!&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_pineapple_allowed</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Alert! Intruder!&#39;</span><span class="p">)</span>
+
+<span class="n">pizza</span> <span class="o">=</span> <span class="n">Pizza</span><span class="p">([</span><span class="s1">&#39;cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="o">.</span><span class="n">pineapple_allowed</span><span class="p">)</span>
+<span class="n">pizza</span><span class="o">.</span><span class="n">pineapple_allowed</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pizza</span><span class="o">.</span><span class="n">pineapple_allowed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+Enter the password: Sw0rdf1sh!
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="functions.html" title="previous page">Functions &amp; Modules</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
